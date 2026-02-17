@@ -9,8 +9,9 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/chandra0812-dotcom/charlie-java-webapp.git'
-            }
+                    git branch: 'main',
+            url: 'https://github.com/chandra0812-dotcom/charlie-java-webapp.git'
+    }        
         }
 
         stage('Build WAR') {
