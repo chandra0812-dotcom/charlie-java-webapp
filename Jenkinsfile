@@ -9,7 +9,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/<your-username>/simple-java-webapp.git'
+                git 'https://github.com/chandra0812-dotcom/charlie-java-webapp.git'
             }
         }
 
@@ -25,7 +25,7 @@ pipeline {
                     tomcat10(
                         credentialsId: 'tomcat-cred',
                         path: '',
-                        url: 'http://<Tomcat-IP>:8080'
+                        url: 'http://http://34.235.138.104/:8080'
                     )
                 ],
                 contextPath: 'simple-webapp',
