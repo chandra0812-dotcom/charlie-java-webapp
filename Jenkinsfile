@@ -23,7 +23,7 @@ pipeline {
         stage('Deploy to Tomcat') {
             steps {
                 deploy adapters: [
-                    tomcat10(
+                    tomcat9(
                         credentialsId: 'tomcat-cred',
                         path: '',
                         url: 'http://http://34.235.138.104/:8080'
