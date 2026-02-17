@@ -29,6 +29,19 @@ pipeline {
                         url: 'http://http://34.235.138.104/:8080'
                     )
                 ],
+                    stage('Deploy to Tomcat') {
+  steps {
+    deploy adapters: [
+      tomcat9(
+        url: 'http://100.31.102.136:8080/manager/text',
+        credentialsId: 'tomcat-creds'
+      )
+    ],
+    contextPath: 'simple-webapp',
+    war: 'target/simple-webapp.war'
+  }
+}
+
                 contextPath: 'simple-webapp',
                 war: 'target/simple-webapp.war'
             }
